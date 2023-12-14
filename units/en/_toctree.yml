@@ -11,9 +11,11 @@
   sections:
     - local: bonus1/introduction
       title: Introduction to this bonus section
-    - local: bonus1/aiandgames
+    - local: bonus1/ai-and-games
       title: AI 101 by AI and Games
-    - local: bonus1/unity
+    - local: bonus1/ai-in-unity
       title: Classical AI in Unity
-    - local: bonus1/unreal
+    - local: bonus1/ai-in-unreal
       title: Classical AI in Unreal
+    - local: bonus1/conclusion
+      title: Conclusion
