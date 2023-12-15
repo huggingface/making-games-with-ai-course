@@ -6,3 +6,30 @@
     title: Setup
   - local: unit0/discord101
     title: Discord 101
+
+- title: Defining my Demo 1. Finding the idea and writing the GDD
+  sections:
+  - local: demo1/introduction
+    title: Introduction
+  - local: demo1/first-game
+    title: It's your first game?
+  - local: demo1/game-idea
+    title: Step 1. Crafting the Game Idea
+  - local: demo1/game-design-document
+    title: Step 2. Writing the GDD
+  - local: demo1/conclusion
+    title: Conclusion
+
+
+
+
+- title: Bonus 1. Classical AI in Video Games
+  sections:
+    - local: unitbonus1/introduction
+      title: Introduction to this bonus section
+    - local: unitbonus1/aiandgames
+      title: AI 101 by AI and Games
+    - local: unitbonus1/unity
+      title: Classical AI in Unity
+    - local: unitbonus1/unreal
+      title: Classical AI in Unreal
