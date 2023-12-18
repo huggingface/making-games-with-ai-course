@@ -1,2 +1,221 @@
 # Step 2: Let's write the Game Design Document
 
+## What is a Game Design Document (GDD)?
+
+A Game Design Document (GDD) is an important tool in the game industry: it's the **blueprint of a video game project**.
+
+In this document, we outlines the:
+- Gameplay of the game, 
+- Features
+- Game mechanics
+- Scope
+- Assets
+- And more.
+
+The GDD **ensures a clear definition and understanding of the game's vision for all teammates** and facilitates the development process.
+
+In the case of our demo, **we want to write a concise one-page document**.
+
+## The One Page Game Design Document Template
+
+This is our One Page GDD template, you can naturally add or remove elements based on your needs.
+
+### Game Title ✍️
+
+- Brainstorm and define potential game titles.
+
+### Team and roles 👯
+
+- Clearly outline your team members and assign specific roles to each member.
+
+### Game Concept 🤯
+
+- Define your single sentence description of the game that **you will use to guide you during design decisions**.
+
+## Game Genre 🏷️
+
+- Clearly identify the genre of your game.
+
+## Game Features and AI tools/model used 🤖
+
+- List and describe the planned game features, along with any AI tools or models you intend to incorporate.
+
+## Platform 🖥️
+
+- On what platform do you want to publish it? Remember it needs to work either on HuggingFace Spaces (WEBGL) and/or Windows.
+
+## Scope ⏲️
+
+- Establish the expected playtime. We think a 10min maximum play is a good scope for this course.
+
+## Art Style 🎨🖌️
+
+- Determine the desired art style for your game's assets, such as low-poly, stylized, or realistic.
+
+## Level 🖼️
+
+- Define what your level will look like (that will help to know how much assets do you need).
+
+## Assets 📦
+
+- Define the assets you need to make this game. We're going to talk about assets and how to find them in the next demo unit.
+
+## Todo 📝
+
+- What needs to be done, think of this section for now as a brain dump to note everything that comes to your mind that need to be done in the game.
+
+
+## A Game Design Document One Page Example: Museum Robery
+
+To help you visualize better how this tool is useful, we're going to give an example below with a game called Museum Robery.
+
+[Museum Robery]
+
+### Game Title ✍️
+
+- Museum Robery
+- Roomba Heist
+
+### Team and roles 👯
+
+- Thomas Simonini
+
+### Game Concept 🤯
+
+You’re a thief that controls with your voice a robot cleaner in a museum at night and your role is to steal the golden duck. A very expensive statue without getting caught by lasers and guards.
+
+### Game Genre 🏷️
+
+- Infiltration
+
+### Game Features and AI tools/model used 🤖
+
+- Command the robot using your own voice (ASR)
+
+- The robot will understand what action to make (Sentence Similarity)
+
+- The robot can steal stuff and break stuff
+
+### Platform 🖥️
+
+- WebGL
+
+### Scope ⏲️
+
+- 10min play
+- 3 levels
+
+### Art Style 🎨🖌️
+
+- Low poly
+- Using Unity Feel library for the nice touch additions
+
+### Levels 🖼️
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/demo-unit1/museumrobery_level1.png" alt="Museum Robery GDD Level 1" width="100%"/>
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/demo-unit1/museumrobery_level2.png" alt="Museum Robery GDD Level 2" width="100%"/>
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/demo-unit1/museumrobery_level3.png" alt="Museum Robery GDD Level 3" width="100%"/>
+
+## Assets 📦
+
+- Floor
+- Wall
+- Half Wall
+- Pedestal
+- Statue 1
+- Statue 2
+- Statue 3
+- Statue 4
+- Laser Beam
+
+- Paint
+    - Paint 1
+    - Paint 2
+    - Paint 3
+    - Paint 4
+    - Paint 5
+    - Paint 6
+    - Couch
+    - Enemy
+
+- Player
+
+- Number plaques
+- Grid
+- Round place
+- Golden Duck
+
+- Statue 1 break
+- Statue 2 break
+- Statue 3 break
+- Statue 4 break
+
+- + Textures for floor
+- + Textures for wall
+
+## Todo 📝
+
+✅ Floor
+
+✅ Wall
+
+✅ Half Wall
+
+✅ Pedestal
+
+✅ Statue 1 (unicorn)
+
+✅ Statue 2 (flamingo)
+
+✅ Statue 3 (cake)
+
+✅ Statue 4 (hot dog)
+
+✅ Frame
+
+✅ Couch
+
+✅ Number plaques
+
+✅ Grid
+
+✅ Round place
+
+- Paint
+    - Paint 1
+    - Paint 2
+    - Paint 3
+    - Paint 4
+    - Paint 5
+    - Paint 6
+    - Enemy
+- Laser Beam
+
+### Step 2: Room 1
+
+- Room 1 export assets
+- Floor texture
+- Floor prefab
+- Wall texture
+- Wall prefab
+- Small wall texture
+- Small wall prefab
+- Install
+- Navmesh
+- Laser Beam
+- Laser Beam movement
+
+In addition to this, I like to write a list of **learning goals** when I make a demo, in this case my learning goals were:
+
+### Learning Goals 🏆
+
+- Make a game from beginning to the end
+- Publish it
+- Learn to use the Hugging Face API
+- Learn better to use Navmesh
+- Learn to use sound
+- Learn to use animation and break
+- Learn to use Feel
+
