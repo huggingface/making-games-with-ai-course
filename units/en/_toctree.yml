@@ -1,12 +1,3 @@
-- title: Unit 0. Welcome to the course
-  sections:
-  - local: unit0/introduction
-    title: Welcome to the course 🤗
-  - local: unit0/setup
-    title: Setup
-  - local: unit0/discord101
-    title: Discord 101
-
 - title: Bonus 1. Classical AI in Video Games
   sections:
     - local: bonus1/introduction
