@@ -6,3 +6,9 @@
     title: Setup
   - local: unit0/discord101
     title: Discord 101
+- title: Certification and congratulations
+  sections:
+  - local: communication/conclusion
+    title: Congratulations
+  - local: communication/certification
+    title: Get your certificate of completion
