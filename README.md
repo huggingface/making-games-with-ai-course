@@ -1,2 +1,2 @@
-# ml-for-games-course
-This repository contains the ML For Games Course
+# Making Games with AI Course 
+This repository contains the Making Games with AI Course 
