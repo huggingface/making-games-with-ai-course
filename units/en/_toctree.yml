@@ -1,12 +1,12 @@
 - title: Bonus 1. Classical AI in Video Games
   sections:
-    - local: bonus1/introduction
+    - local: unitbonus1/introduction
       title: Introduction to this bonus section
-    - local: bonus1/ai-and-games
+    - local: unitbonus1/ai-and-games
       title: AI 101 by AI and Games
-    - local: bonus1/ai-in-unity
+    - local: unitbonus1/ai-in-unity
       title: Classical AI in Unity
-    - local: bonus1/ai-in-unreal
+    - local: unitbonus1/ai-in-unreal
       title: Classical AI in Unreal
-    - local: bonus1/conclusion
+    - local: unitbonus1/conclusion
       title: Conclusion
