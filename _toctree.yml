@@ -2,7 +2,15 @@
   sections:
   - local: unit0/introduction
     title: Welcome to the course 🤗
+  - local: unit0/game-demo
+    title: The Course's Goal. Build Your own Game Demo
+  - local: unit0/syllabus
+    title: The Course's syllabus
+  - local: unit0/who-are-we
+    title: The Author and the Team
   - local: unit0/setup
-    title: Setup
+    title: The onboarding
   - local: unit0/discord101
     title: Discord 101
+  - local: unit0/how-to-get-most
+    title: How to get most of the course?
