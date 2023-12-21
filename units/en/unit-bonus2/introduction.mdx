@@ -1,3 +1,77 @@
 # Introduction
 
-<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/bonus-unit2/thumbnail.jpg" alt="3D For Games thumbnail" width="100%"/>
+<img
+    src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/bonus-unit2/thumbnail.jpg"
+    alt="3D For Games thumbnail"
+    width="100%"
+/>
+
+Get ready for 3D.
+
+Or don't get ready, because Generative 3D hasn't reached the usability tipping point that Generative 2D has.
+
+However, we may be on the verge of some very important breakthroughs in 3D. This bonus unit will go over what you need to know.
+
+Do you prefer a video? Here's a video:
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=lG3g8mYKfqU" target="\_blank"><img src="http://img.youtube.com/vi/lG3g8mYKfqU/0.jpg" alt="Future of 3D Video" width="240" height="180" border="3"/></a>
+
+# Meshes
+
+A mesh is a collection of vertices, edges, and faces. It's a 3D object.
+
+![Mesh](https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/3D_model_of_a_Cube.stl/800px-3D_model_of_a_Cube.stl.png)
+
+The vast majority of the 3D ecosystem (games, movies, etc.) revolves around meshes. However, meshes are very challenging to generate. There have been little to no practical improvements since [Shap-e](https://huggingface.co/spaces/hysts/Shap-E).
+
+What do I mean by practical? I mean that the generated meshes are not usable out-of-the-box. They require a lot of manual work to make them usable. This is very reminiscent of [photogrammetry](https://en.wikipedia.org/wiki/Photogrammetry), a long-standing technique for generating 3D models from photographs.
+
+![Photogrammetry](https://upload.wikimedia.org/wikipedia/commons/6/6d/Photogrammetry_of_the_face_02.jpg)
+
+Most research in mesh generation focuses on improving the quality of multi-view consistent images. This is analogous to improving the quality of the photographs in photogrammetry. However, the real challenge is in the reconstruction of the 3D model from the images. This has seen relatively little progress.
+
+There is, however, ongoing research that focuses on mesh quality. One example is [MeshGPT](https://nihalsid.github.io/mesh-gpt/), for which code is not yet available. This is definitely worth keeping an eye on.
+
+# Gaussian Splatting
+
+An alternative to meshes that has exploded in recent months is [Gaussian Splatting](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/), a rasterization technique that renders scenes as transparent gaussian blobs.
+
+You can read more about the technical details of Gaussian Splatting [here](https://huggingface.co/blog/gaussian-splatting), or browse interactive examples [here](https://huggingface.co/spaces/dylanebert/igf).
+
+![Gaussian Splatting Scene](https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/blog/124_ml-for-games/gaussian/bicycle.png)
+
+Gaussian Splatting has a couple major advantages over meshes:
+
+1. Very fast photorealistic rendering.
+2. Much easier to generate.
+
+And one major disadvantage:
+
+1. It's incompatible with the existing 3D ecosystem.
+
+This incompatibility means that lighting, animation, physics, etc. all need to be re-invented. There has been progress on this, but it remains to be seen whether AI-compatibility will propel Gaussian Splatting into mainstream production.
+
+If you want an overview of everything going on in the realm of Gaussian Splatting, check out this well-maintained [list of resources](https://github.com/MrNeRF/awesome-3D-gaussian-splatting).
+
+# Tools You Can Use Now
+
+In the meantime, the most practical use for AI in 3D is in:
+
+1. Concepting
+2. Texturing
+
+These are essentially 2D problems, for which you can use the same tools you've already learned.
+
+You can combine this with tools like [Real-Time Latent Consistency](https://huggingface.co/spaces/radames/Real-Time-Latent-Consistency-Model) and an OBS screen-capture of the modeling viewport, for real-time concepting as you model. Check out an example of this [here](https://x.com/dylan_ebert_/status/1724885074313642424).
+
+When it comes to texturing, tools like [dream-textures](https://github.com/carson-katri/dream-textures) allow you to use Stable Diffusion built-in to Blender to generate high-quality textures.
+
+To learn more about this practical AI workflow, check out [this blogpost](https://huggingface.co/blog/3d-assets).
+
+# Conclusion
+
+AI hasn't reached the usability tipping point for 3D that it has for 2D. However, this likely won't be the case for long.
+
+Keep an eye on the latest mesh generation research, as well as the ongoing explosion of Gaussian Splatting research. It remains to be seen which will pass the tipping point first.
+
+In the meantime, you can use AI for concepting and texturing. This is a great way to get started with AI in 3D.
