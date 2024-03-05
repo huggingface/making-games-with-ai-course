@@ -1,0 +1,58 @@
+# How to run an AI model: local vs remote
+
+In this game, we want to run a sentence similarity model, I'm going to use [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2).
+
+It's a BERT Transformer model. It's **already trained so we can use it directly.**
+
+But here, I have two solutions to run it, I can:
+
+- Run this AI model remotely: on a server. And I send API calls and get responses from the server. That requires an internet connection.
+- Run this AI model locally: on the player machine.
+
+Both are valid solutions, but they have advantages and inconvenients.
+
+
+## Running the model remotely
+
+I run the model on a remote server, and send API calls to the game. Or use an API service to do it directly for me.
+
+For instance, Hugging Face provides a free API called [Inference API](https://huggingface.co/inference-api) that allows you use AI models via simple API calls. And we have a [Unity plugin](https://huggingface.co/blog/unity-api) to access and use Hugging Face AI models within their Unity projects.
+
+
+## Advantages
+
+- You're not using the RAM/VRAM of your player.
+- You can access the data, and understand what actions the players usually type to improve your NPC. 
+
+## Inconvenients
+
+- **Dependence on an internet connection**, risking immersion disruption due to potential API lag.
+- **Potential high cost associated with API usage**, especially with many players.
+
+
+Usually, you use an API if you use a very big model that couldn't run on a player machine. For instance if you use Llama-2 big models.
+
+
+
+## Running the model locally
+
+I run the model locally: on the player machine. To be able to do that I use two libraries.
+
+1. Unity Sentis: the neural network inference library that allow us to run our AI model directly inside our game.
+
+2. The Hugging Face Sharp Transformers: a Unity plugin of utilities to run Transformer 🤗 models in Unity games.
+
+### Advantages
+
+- You don't have usage cost since everything runs on your player machine.
+- The player does not need to be connected to the Internet.
+
+
+### Inconvenients
+
+- You use the RAM/VRAM of the player so you need to specify spec recommendations 
+- You can't know the model usage and what people ask.
+
+
+
+Since the sentence similarity model we're going to use is small, **we decided to run it locally**.

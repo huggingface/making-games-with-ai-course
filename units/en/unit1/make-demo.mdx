@@ -1,0 +1,172 @@
+# Let's build our smart robot demo 🤖
+
+[ADD ILLUSTRATION]
+ 
+## Step 0: Get the project files
+
+You can find the 👉 [complete Unity project here](https://drive.google.com/file/d/1sSqCzoslfTUkqR5JA0rwE1QWy9BECgjd/view?usp=drive_link)
+
+## Step 1: Install Unity Sentis
+
+The Sentis Documentation 👉 https://docs.unity3d.com/Packages/com.unity.sentis@latest
+
+1. Open the Jammo project
+
+2. Click [Sentis Pre-Release package](https://tinyurl.com/4eun48fb) or go to Window > Package Manager, click the + icon, select "Add package by name…" and type "com.unity.sentis"
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/sentis1.jpg" alt="Sentis"/>
+
+3. Press the Add button to install the package.
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/sentis2.jpg" alt="Sentis"/>
+
+
+## Step 2: Install Sharp Transformers 💪
+
+[Sharp Transformers](https://github.com/huggingface/sharp-transformers) is a Unity plugin of utilities to **run Transformer 🤗 models in Unity games**.
+
+We need to do it for the tokenization step.
+
+Go to "Window" > "Package Manager" to open the Package Manager.
+
+Click the "+" in the upper left-hand corner and select "Add package from git URL".
+
+Enter the URL of this repository and click "Add": [https://github.com/huggingface/sharp-transformers.git](https://github.com/huggingface/sharp-transformers.git)
+
+
+## Step 3: Build the inference process 🧠
+
+As described in [Sentis documentation](https://docs.unity3d.com/Packages/com.unity.sentis@latest), to use Sentis to run a neural network in Unity, we need to follow these steps.
+
+Use the Unity.Sentis namespace.
+
+Load a neural network model file.
+
+Create input for the model.
+
+Create an inference engine (a worker).
+
+Run the model with the input to infer a result.
+
+Get the result.
+
+In our case, we do all of this in **SentenceSimilarity.cs** file, that will be attached to our robot.
+
+In awake, we:
+
+Load our neural network
+
+Create an inference engine (a worker).
+
+Create an operator, that will allow us to perform operations with tensors.
+
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/sentis-similarity1.jpg" alt="Sentis Similarity"/>
+
+We have three functions:
+
+1. *Encode*: takes our player input (text), **tokenizes it, and embeds it**.
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/sentis-similarity2.jpg" alt="Sentis Similarity"/>
+
+2. *SentenceSimilarityScores*: **calculate the similarity scores** between the input embed (what the user typed) and the comparison embeds (the robot action list)
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/sentis-similarity3.jpg" alt="Sentis Similarity"/>
+
+3. *RankSimilarityScores*: get the **most similar action** and its index given the player input
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/sentis-similarity4.jpg" alt="Sentis Similarity"/>
+
+## Step 4: Build the Robot Behavior 🤖
+
+We need to define the **behavior of our robot**.
+
+The idea is that our robot has different possible actions and the choice of the actions **will depend on most similar actions**.
+
+We need first to define the *Finite State Machine*, a simple **classical AI technique where each State defines a certain behavior**.
+
+Then, we’ll make the utility function **that will select the State hence the series of actions to perform**.
+
+### The State Machine 🧠🤖
+
+In a state machine, **each state represents a behavior**, for instance, moving to a column, saying hello, etc. Based on the state the agent is **it will perform a series of actions**.
+
+In our case, we have 7 states:
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/fsm.jpg" alt="Jammo State Machine"/>
+
+The first thing we need to do is create an enum called State that contains each of the possible States:
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/fsm2.jpg" alt="Jammo State Machine"/>
+
+Because we need to constantly check the state, **we define the state machine into the Update() method using a switch system where each case is a state**.
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/fsm3.jpg" alt="Jammo State Machine"/>
+
+For each state case, we define the behavior of our agents, for instance in our state Hello, the robot **must move towards the player, face him correctly, and then launch its Hello animation, then go back to an Idle State**.
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/fsm4.jpg" alt="Jammo State Machine"/>
+
+We have now defined the behavior for each different State. The magic here will come from the fact **that’s the language model that will define what State is the closest to the Player input**. And in the utility function, we call this state.
+
+
+### Let’s define the Utility Function 📈
+
+Our action list looks like this:
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/utility1.jpg" alt="Utility"/>
+
+- The sentence is what will be embedded in the AI model.
+
+- The verb is the State
+
+- Noun (if any) is the object to interact with (Pillar, Cube, etc.)
+
+This utility function will **select the Verb and Noun associated with the sentence having the highest similarity score with the player input text.**
+
+But first, to **get rid of a lot of strange input text**, we need to have a similarity **score threshold**.
+
+For example, if I say “Look at all the rabbits”, **none of our possible actions are relevant**. Hence instead of choosing the action with the highest score, we’ll call the State Puzzled which will animate the robot with a perplexed animation. 
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/rabbits.gif" alt="Jammo rabbits"/>
+
+If the score is higher, then **we’ll get the verb corresponding to a State and the noun (goalObject) if any**.
+
+We set the state corresponding to the verb. That will activate the behavior corresponding to it.
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/utility2.jpg" alt="Utility"/>
+
+And that’s it, **now we’re ready to interact with our robot!**
+
+
+## Step 5: Let’s interact with our Robot 🤖
+
+In this step, you just need to click on the play button in the editor. And you **can prompt some orders and see the results**!
+
+
+That's nice! But the best way to learn is to try things, break things and modify the demo.
+
+
+## (Optional) Improving the game: let’s add a new action
+
+Adding a new action is quite easy. Let’s take an example:
+
+- Copy the YellowPillar game object and move it
+
+- Change the name to GreenPillar
+
+- Create a new material and set it to green
+
+- Place the material on GreenPillar
+
+Now that we’ve placed the new game object, we need to add this possibility into the sentences and click on Jammo_Player.
+
+In the list of actions click on the plus button and fill in this new action item:
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/optional-jammo1.jpg" alt="Utility"/>
+
+- Add Go to the green column
+- GoTo
+- GreenColumn
+
+And that’s it! It means you can easily iterate and add more actions to your game.
