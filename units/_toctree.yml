@@ -6,3 +6,17 @@
     title: Setup
   - local: unit0/discord101
     title: Discord 101
+- title: Unit 1. Making an intelligent Robot NPC using Hugging Face 🤗 and Unity
+  sections:
+    - local: unit1/introduction
+      title: Introduction
+    - local: unit1/sentence-similarity-explained
+      title: What is Sentence Similarity?
+    - local: unit1/local-vs-api
+      title: How to run an AI model: local vs remote inference
+    - local: unit1/what-is-hf
+      title: What is Hugging Face 🤗?
+    - local: unit1/make-demo
+      title: Let's build our smart robot demo 🤖
+    - local: unit1/conclusion
+      title: Conclusion
