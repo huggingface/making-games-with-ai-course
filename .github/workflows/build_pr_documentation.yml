@@ -14,7 +14,7 @@ jobs:
       commit_sha: ${{ github.event.pull_request.head.sha }}
       pr_number: ${{ github.event.number }}
       package: making-games-with-ai-course
-      package_name: making-games-with-ai-course
+      package_name: ml-games-course
       path_to_docs: making-games-with-ai-course/units/
       additional_args: --not_python_module
       languages: en
