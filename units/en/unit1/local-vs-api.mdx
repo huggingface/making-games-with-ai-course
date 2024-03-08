@@ -6,15 +6,17 @@ It's a BERT Transformer model. It's **already trained so we can use it directly.
 
 But here, I have two solutions to run it, I can:
 
-- Run this AI model remotely: on a server. And I send API calls and get responses from the server. That requires an internet connection.
-- Run this AI model locally: on the player machine.
+- *Run this AI model remotely*: **on a server**. And I send API calls and get responses from the server. That requires an internet connection.
+- *Run this AI model locally*: **on the player machine.**
 
-Both are valid solutions, but they have advantages and inconvenients.
+Both are valid solutions, **but they have advantages and inconvenients**.
 
 
 ## Running the model remotely
 
-I run the model on a remote server, and send API calls to the game. Or use an API service to do it directly for me.
+I run the model **on a remote server**, and send API calls to the game. Or use an API service to do it directly for me.
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/remote.jpg" alt="Running AI model remotely"/>
 
 For instance, Hugging Face provides a free API called [Inference API](https://huggingface.co/inference-api) that allows you use AI models via simple API calls. And we have a [Unity plugin](https://huggingface.co/blog/unity-api) to access and use Hugging Face AI models within their Unity projects.
 
@@ -38,9 +40,13 @@ Usually, you use an API if you use a very big model that couldn't run on a playe
 
 I run the model locally: on the player machine. To be able to do that I use two libraries.
 
-1. Unity Sentis: the neural network inference library that allow us to run our AI model directly inside our game.
+1. [Unity Sentis](https://docs.unity3d.com/Packages/com.unity.sentis@latest): the neural network inference library that allow us to run our AI model directly inside our game.
 
-2. The Hugging Face Sharp Transformers: a Unity plugin of utilities to run Transformer 🤗 models in Unity games.
+2. [The Hugging Face Sharp Transformers](https://github.com/huggingface/sharp-transformers): a Unity plugin of utilities to run Transformer 🤗 models in Unity games.
+
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/local.jpg" alt="Running AI model locally"/>
+
 
 ### Advantages
 
