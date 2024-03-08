@@ -6,7 +6,6 @@
     title: Setup
   - local: unit0/discord101
     title: Discord 101
-
 - title: Defining my Demo Part 1. Finding the idea and writing the GDD
   sections:
   - local: demo1/introduction
