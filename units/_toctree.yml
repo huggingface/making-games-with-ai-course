@@ -6,7 +6,7 @@
     title: Setup
   - local: unit0/discord101
     title: Discord 101
-- title: When the next Unit will be published?
+- title: When the next units will be published?
   sections:
   - local: communication/publishing-schedule
     title: Publishing Schedule
