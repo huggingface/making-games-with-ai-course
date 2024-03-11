@@ -1,7 +1,5 @@
-# Let's build our smart robot demo 🤖
+# Let's build our smart robot NPC demo 🤖 
 
-[ADD ILLUSTRATION]
- 
 ## Step 0: Get the project files
 
 You can find the 👉 [complete Unity project here](https://drive.google.com/file/d/1sSqCzoslfTUkqR5JA0rwE1QWy9BECgjd/view?usp=drive_link)
@@ -18,7 +16,7 @@ The Sentis Documentation 👉 https://docs.unity3d.com/Packages/com.unity.sentis
 
 3. Press the Add button to install the package.
 
-<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/sentis2.jpg" alt="Sentis"/>
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/sentis2.png" alt="Sentis"/>
 
 
 ## Step 2: Install Sharp Transformers 💪
@@ -38,27 +36,27 @@ Enter the URL of this repository and click "Add": [https://github.com/huggingfac
 
 As described in [Sentis documentation](https://docs.unity3d.com/Packages/com.unity.sentis@latest), to use Sentis to run a neural network in Unity, we need to follow these steps.
 
-Use the Unity.Sentis namespace.
+1. Use the Unity.Sentis namespace.
 
-Load a neural network model file.
+2. **Load a neural network** model file.
 
-Create input for the model.
+3. **Create input** for the model.
 
-Create an inference engine (a worker).
+4. **Create an inference engine** (a worker).
 
-Run the model with the input to infer a result.
+5. **Run the model** with the input to infer a result.
 
-Get the result.
+6. **Get the result**.
 
 In our case, we do all of this in **SentenceSimilarity.cs** file, that will be attached to our robot.
 
 In awake, we:
 
-Load our neural network
+1. **Load our neural network.**
 
-Create an inference engine (a worker).
+2. Create an **inference engine** (a worker).
 
-Create an operator, that will allow us to perform operations with tensors.
+3. **Create an operator**, that will allow us to perform operations with tensors.
 
 
 <img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/sentis-similarity1.jpg" alt="Sentis Similarity"/>
@@ -169,4 +167,4 @@ In the list of actions click on the plus button and fill in this new action item
 - GoTo
 - GreenColumn
 
-And that’s it! It means you can easily iterate and add more actions to your game.
+And that’s it! **You can easily iterate and add more actions to your game**.

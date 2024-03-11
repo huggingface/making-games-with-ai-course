@@ -18,5 +18,7 @@
       title: What is Hugging Face 🤗?
     - local: unit1/make-demo
       title: Let's build our smart robot demo 🤖
+    - local: unit1/next-steps
+      title: What you can do now?
     - local: unit1/conclusion
       title: Conclusion
