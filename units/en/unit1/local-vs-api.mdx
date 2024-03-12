@@ -1,0 +1,64 @@
+# How to run an AI model: local vs remote
+
+In this game, we want to run a sentence similarity model, I'm going to use [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2).
+
+It's a BERT Transformer model. It's **already trained so we can use it directly.**
+
+But here, I have two solutions to run it, I can:
+
+- *Run this AI model remotely*: **on a server**. I send API calls and get responses from the server. That requires an internet connection.
+- *Run this AI model locally*: **on the player's machine.**
+
+Both are valid solutions, **but they have advantages and disadvantages**.
+
+
+## Running the model remotely
+
+I run the model **on a remote server**, and send API calls from the game. I can use an API service to help deploy the model.
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/remote.jpg" alt="Running AI model remotely"/>
+
+For instance, Hugging Face provides an API service called [Inference API](https://huggingface.co/inference-api) (free for prototyping and experimentation) that allows you to use AI models via simple API calls. And we have a [Unity plugin](https://huggingface.co/blog/unity-api) to access and use Hugging Face AI models from within Unity projects.
+
+
+## Advantages
+
+- You're not using the RAM/VRAM of your player to run the model.
+- Your server can log the data, so you can understand what actions players usually type and thus you can improve your NPC. 
+
+## Disadvantages
+
+- **Dependence on an internet connection**, risking immersion disruption due to potential API lag.
+- **Potential high cost associated with API usage**, especially with many players.
+
+
+Usually, you use an API if you use a very big model that couldn't run on a player machine. For instance if you use big models like Llama 2.
+
+
+
+## Running the model locally
+
+I run the model locally: on the player machine. To be able to do that I use two libraries.
+
+1. [Unity Sentis](https://docs.unity3d.com/Packages/com.unity.sentis@latest): the neural network inference library that allow us to run our AI model directly inside our game.
+
+2. [The Hugging Face Sharp Transformers library](https://github.com/huggingface/sharp-transformers): a Unity plugin of utilities to run Transformer 🤗 models in Unity games.
+
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/local.jpg" alt="Running AI model locally"/>
+
+
+### Advantages
+
+- You don't have usage cost since everything runs on the player's computer.
+- The player does not need to be connected to the Internet.
+
+
+### Disadvantages
+
+- You use the RAM/VRAM of the player so you need to specify spec recommendations 
+- You can't easily know how people use the game or the model.
+
+
+
+Since the sentence similarity model we're going to use is small, **we decided to run it locally**.
