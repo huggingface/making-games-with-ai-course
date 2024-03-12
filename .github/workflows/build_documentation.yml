@@ -12,7 +12,7 @@ jobs:
     with:
       commit_sha: ${{ github.sha }}
       package: making-games-with-ai-course
-      package_name: ml-games
+      package_name: ml-games-course
       path_to_docs: making-games-with-ai-course/units/
       additional_args: --not_python_module
       languages: en
