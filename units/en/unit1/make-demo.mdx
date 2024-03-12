@@ -2,11 +2,11 @@
 
 ## Step 0: Get the project files
 
-You can find the 👉 [complete Unity project here](https://drive.google.com/file/d/1sSqCzoslfTUkqR5JA0rwE1QWy9BECgjd/view?usp=drive_link)
+You can find the 👉 [complete Unity project here](https://huggingface.co/datasets/huggingface-ml-4-games-course/unity-demos/resolve/main/unit1/Jammo%20the%20Robot%20Sentis%20(v2).zip?download=true)
 
 ## Step 1: Install Unity Sentis
 
-Follow the Sentis Documentation 👉 https://docs.unity3d.com/Packages/com.unity.sentis@latest
+The Sentis Documentation 👉 https://docs.unity3d.com/Packages/com.unity.sentis@latest
 
 1. Open the Jammo project
 
@@ -23,7 +23,7 @@ Follow the Sentis Documentation 👉 https://docs.unity3d.com/Packages/com.unity
 
 [Sharp Transformers](https://github.com/huggingface/sharp-transformers) is a Unity plugin of utilities to **run Transformer 🤗 models in Unity games**.
 
-We need to use it for the tokenization step. Otherwise you'd have to write the tokenization code yourself!
+We need to do it for the tokenization step.
 
 Go to "Window" > "Package Manager" to open the Package Manager.
 
@@ -34,7 +34,7 @@ Enter the URL of this repository and click "Add": [https://github.com/huggingfac
 
 ## Step 3: Build the inference process 🧠
 
-As described in the [Sentis documentation](https://docs.unity3d.com/Packages/com.unity.sentis@latest), to use Sentis to run a model in Unity, you need to follow these steps.
+As described in [Sentis documentation](https://docs.unity3d.com/Packages/com.unity.sentis@latest), to use Sentis to run a neural network in Unity, we need to follow these steps.
 
 1. Use the Unity.Sentis namespace.
 
@@ -50,7 +50,7 @@ As described in the [Sentis documentation](https://docs.unity3d.com/Packages/com
 
 In our case, we do all of this in **SentenceSimilarity.cs** file, that will be attached to our robot.
 
-In `Awake`, we:
+In awake, we:
 
 1. **Load our neural network.**
 
@@ -79,11 +79,11 @@ We have three functions:
 
 We need to define the **behavior of our robot**.
 
-The idea is that our robot has a set of different possible actions, and the choice of the action taken **will depend on the action most similar to the user's input**.
+The idea is that our robot has different possible actions and the choice of the actions **will depend on most similar actions**.
 
-We first need to define the *Finite State Machine*, a simple **classical AI technique where each State defines a certain behavior**.
+We need first to define the *Finite State Machine*, a simple **classical AI technique where each State defines a certain behavior**.
 
-Then, we’ll make the utility function **that will select the State, hence the series of actions to perform**.
+Then, we’ll make the utility function **that will select the State hence the series of actions to perform**.
 
 ### The State Machine 🧠🤖
 
@@ -101,7 +101,7 @@ Because we need to constantly check the state, **we define the state machine int
 
 <img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/fsm3.jpg" alt="Jammo State Machine"/>
 
-For each state case, we define the behavior of our agents, for instance in our `Hello` state, the robot **must move towards the player, face her correctly, then launch its Hello animation, and finally go back to the Idle State**.
+For each state case, we define the behavior of our agents, for instance in our state Hello, the robot **must move towards the player, face him correctly, and then launch its Hello animation, then go back to an Idle State**.
 
 <img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/fsm4.jpg" alt="Jammo State Machine"/>
 
@@ -114,7 +114,7 @@ Our action list looks like this:
 
 <img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/utility1.jpg" alt="Utility"/>
 
-- The sentence is what will be embedded by the AI model, to compare with the player's instructions.
+- The sentence is what will be embedded in the AI model.
 
 - The verb is the State
 
@@ -124,13 +124,13 @@ This utility function will **select the Verb and Noun associated with the senten
 
 But first, to **get rid of a lot of strange input text**, we need to have a similarity **score threshold**.
 
-For example, if I say “Look at all the rabbits”, **none of our possible actions are relevant**. Hence instead of choosing the action with the highest score, we’ll call the `Puzzled` state, which will animate the robot with a perplexed animation. 
+For example, if I say “Look at all the rabbits”, **none of our possible actions are relevant**. Hence instead of choosing the action with the highest score, we’ll call the State Puzzled which will animate the robot with a perplexed animation. 
 
 <img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/rabbits.gif" alt="Jammo rabbits"/>
 
-If the score is higher than the threshold, then **we’ll get the verb corresponding to a State and the noun (goalObject) if any**.
+If the score is higher, then **we’ll get the verb corresponding to a State and the noun (goalObject) if any**.
 
-We set the state corresponding to the verb. That will activate the behavior associated to it.
+We set the state corresponding to the verb. That will activate the behavior corresponding to it.
 
 <img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/utility2.jpg" alt="Utility"/>
 
@@ -159,12 +159,14 @@ Adding a new action is quite easy. Let’s take an example:
 
 Now that we’ve placed the new game object, we need to add this possibility into the sentences and click on Jammo_Player.
 
-In the list of actions, click on the plus button and fill in this new action item:
+In the list of actions click on the plus button and fill in this new action item:
 
 <img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/optional-jammo1.jpg" alt="Utility"/>
 
-- Add "Go to the green column" in the Sentence field.
-- Enter "MoveTo" as the Verb.
-- Use "GreenColumn" (or the name of the object you created) as the Noun.
+- Add Go to the green column
+- GoTo
+- GreenColumn
 
 And that’s it! **You can easily iterate and add more actions to your game**.
+
+Again, don't forget to test the similarity threshold, **to see if you need to increase it or decrease it**.

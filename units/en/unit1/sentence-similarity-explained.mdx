@@ -67,4 +67,12 @@ Otherwise, we ask the robot to perform the "I'm perplexed" animation. Since the 
 
 <img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/rabbits.gif" alt="Jammo rabbits"/>
 
+### Why 0.2 for the similarity score threshold?
+
+This is a threshold value: if the similarity score is below it, **we consider the player's order too different from the possible robot action list**.
+
+It was found by **testing** different threshold scores.
+
+More importantly, this **not a fixed threshold** since the similarity score of all the possible robot actions sums to 1. You must decrease this threshold **if you add more action to the robot action list**.
+
 Now that we understand the whole pipeline, you might wonder **how to run this AI model.** In the player's machine or remotely? And what are the differences. That's the topic of the next section.
