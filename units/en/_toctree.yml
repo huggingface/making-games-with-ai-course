@@ -9,10 +9,10 @@
   - local: unit0/who-are-we
     title: The Team
   - local: unit0/setup
-    title: The onboarding
+    title: Onboarding
   - local: unit0/discord101
     title: Discord 101
   - local: unit0/how-to-get-most
-    title: How to get most of the course?
+    title: Getting the most of the course
   - local: unit0/conclusion
     title: Conclusion
