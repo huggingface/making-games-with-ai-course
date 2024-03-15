@@ -1,4 +1,4 @@
-# [Machine Learning For Games Course 🎮](https://huggingface.co/ml-games/unit0/introduction)
+# [Machine Learning For Games Course 🎮](https://huggingface.co/learn/ml-games-course/unit0/introduction)
 
 <img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit0/thumbnail.jpg" alt="Thumbnail"/>
 
@@ -6,11 +6,11 @@
 If you like the course, don't hesitate to **⭐ star this repository. This helps us 🤗**.
 
 
-This repository contains the Machine Learning for Games Course mdx files and notebooks. **The website is here** 👉 https://huggingface.co/ml-games/unit0/introduction
+This repository contains the Machine Learning for Games Course mdx files and notebooks. **The website is here** 👉 https://huggingface.co/learn/ml-games-course/unit0/introduction
 
-- The syllabus 📚: https://huggingface.co/ml-games/unit0/introduction
+- The syllabus 📚: https://huggingface.co/learn/ml-games-course/unit0/syllabus
 
-- The course 📚: https://huggingface.co/ml-games/unit0/introduction
+- The course 📚: https://huggingface.co/learn/ml-games-course/unit0/introduction
 
 
 Don't forget to sign up  👉 [here](http://eepurl.com/iCWDQw) (it's free)

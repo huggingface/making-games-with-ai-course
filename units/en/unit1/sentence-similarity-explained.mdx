@@ -1,0 +1,78 @@
+# The power of Sentence Similarity 🤖
+
+Before diving into making the demo, we must **understand sentence similarity and how it works**.
+
+## How does this game work?
+
+In this game, we want to **give more freedom to the player**: instead of giving an order to a robot by just clicking a button, we want them to interact with it through text.
+
+The robot has a list of actions and **uses a sentence similarity model that selects the closest action** (if any) given the player's order.
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/sentence-similarity.jpg" alt="Sentence Similarity Pipeline"/>
+
+For instance, if I write, “Hey, grab me the red box”, **the robot isn't programmed to know what “Hey, grab me the red box” is**. But the sentence similarity model connected this order with the “bring red box” action we programmed for the robot.
+
+Therefore, thanks to this technique, **we can build believable character AI without having the tedious process of mapping every possible player input interaction to robot response by hand**. We let the sentence similarity model do the job for us!
+
+## What is Sentence Similarity?
+
+Sentence Similarity is a task that, given a source sentence and a set of target sentences, **calculates how similar the target sentences are to the source**.
+
+<figure>
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/sentence-similarity-example.jpg" alt="Sentence Similarity Example"/>
+<figcaption>Source: https://huggingface.co/tasks/sentence-similarity</figcaption>
+</figure>
+
+For instance, if our source sentence (player order) is “Hey grab me the red box”, it’s very close to the “Bring red box” sentence in the action list.
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/sentence-similarity.jpg" alt="Sentence Similarity Pipeline"/>
+
+
+Sentence similarity models convert input text, like “Hello”, into vectors (called embeddings) that capture semantic information. We call this step to embed. Then, we calculate how close (similar) they are using **cosine similarity**.
+
+I'll not go into the details, but the essence is: since our sentence similarity models produce vectors, we can calculate **the cosine of the angle between two vectors. The closer the result is to 1, the more similar these two vectors are.**
+
+<figure>
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/cosine.png" alt="Cosine similarity"/>
+<figcaption> Source: https://zhangruochi.com/Operations-on-word-vectors-Debiasing/2019/03/28/</figcaption>
+</figure>
+
+If you want to dive deeper into the sentence similarity task, check this 👉 https://huggingface.co/tasks/sentence-similarity
+
+## The Complete pipeline
+
+Now that we understand Sentence Similarity, **let's see the entire pipeline: from the moment a player inputs an order to the robot acting**.
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/jammo-process.jpg" alt="Jammo Process"/>
+
+1. The player types an order: "Can you bring me the red cube?"
+
+2. The robot has a list of actions ["Hello", "Happy", "Bring red box", "Move to blue pillar"]
+
+3. What we want to do then is to embed this player input text **to compare to the robot action list to find the most similar action (if any).**
+
+4. To do that **we tokenize the input**: a Transformer model can't take a string as input. **It needs to be translated into numbers.** This is done using the Tokenizer code provided by [Sharp Transformers](https://github.com/huggingface/sharp-transformers).
+
+5. Then, the input (tokenized) is passed to the model **that outputs an embedding of this text**: a vector that captures semantic information about the text. This inference part is done by Unity Sentis.
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/jammo-process-1.jpg" alt="Jammo process part 1"/>
+
+6. Now we can compare **this vector with other vectors (from the action list) using cosine similarity.**
+
+7. We select the action with the **highest similarity and get the similarity score.**
+
+If the similarity score > 0.2, **we ask the robot to perform the action.**
+
+Otherwise, we ask the robot to perform the "I'm perplexed" animation. Since the order given **is too different from the action list** (it can be the case if the player for instance writes something totally irrelevant like "do you like rabbits?".
+
+<img src="https://huggingface.co/datasets/huggingface-ml-4-games-course/course-images/resolve/main/en/unit1/unity/rabbits.gif" alt="Jammo rabbits"/>
+
+### Why 0.2 for the similarity score threshold?
+
+This is a threshold value: if the similarity score is below it, **we consider the player's order too different from the possible robot action list**.
+
+It was found by **testing** different threshold scores.
+
+More importantly, this **not a fixed threshold** since the similarity score of all the possible robot actions sums to 1. You must decrease this threshold **if you add more action to the robot action list**.
+
+Now that we understand the whole pipeline, you might wonder **how to run this AI model.** In the player's machine or remotely? And what are the differences. That's the topic of the next section.
