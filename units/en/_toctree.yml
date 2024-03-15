@@ -2,20 +2,10 @@
   sections:
   - local: unit0/introduction
     title: Welcome to the course 🤗
-  - local: unit0/game-demo
-    title: The Goal, Build Your own Game Demo
-  - local: unit0/syllabus
-    title: Syllabus
-  - local: unit0/who-are-we
-    title: The Team
   - local: unit0/setup
-    title: Onboarding
+    title: Setup
   - local: unit0/discord101
     title: Discord 101
-  - local: unit0/how-to-get-most
-    title: Getting the most of the course
-  - local: unit0/conclusion
-    title: Conclusion
 - title: Unit 1. Create a smart Robot NPC using Hugging Face 🤗 and Unity Sentis
   sections:
     - local: unit1/introduction
@@ -29,10 +19,24 @@
     - local: unit1/make-demo
       title: Let's build our smart robot demo 🤖
     - local: unit1/next-steps
-      title: What can you do now?
+      title: What you can do now?
     - local: unit1/conclusion
       title: Conclusion
-- title: When the next units will be published?
+- title: Bonus 1. Classical AI in Video Games
   sections:
-    - local: communication/publishing-schedule
-      title: Publishing Schedule
+    - local: unitbonus1/introduction
+      title: Introduction to this bonus section
+    - local: unitbonus1/ai-and-games
+      title: AI 101 by AI and Games
+    - local: unitbonus1/ai-gmtk
+      title: AI Studies by GMTK (Game Maker Toolkit)
+    - local: unitbonus1/ai-in-unity
+      title: Classical AI in Unity
+    - local: unitbonus1/ai-in-unreal
+      title: Classical AI in Unreal
+    - local: unitbonus1/conclusion
+      title: Conclusion
+- title: Unit 2. LLM
+  sections:
+      - local: unit2/introduction
+        title: Introduction
