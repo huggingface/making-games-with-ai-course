@@ -32,7 +32,20 @@
       title: What can you do now?
     - local: unit1/conclusion
       title: Conclusion
+- title: Defining my Demo Part 1. Finding the idea and writing the GDD
+  sections:
+  - local: demo1/introduction
+    title: Introduction
+  - local: demo1/first-game
+    title: It's your first game?
+  - local: demo1/game-idea
+    title: Step 1. Crafting the Game Idea
+  - local: demo1/game-design-document
+    title: Step 2. Writing the GDD
+  - local: demo1/conclusion
+    title: Conclusion
 - title: When the next units will be published?
   sections:
     - local: communication/publishing-schedule
       title: Publishing Schedule
+
