@@ -2,10 +2,36 @@
   sections:
   - local: unit0/introduction
     title: Welcome to the course 🤗
+  - local: unit0/game-demo
+    title: The Goal, Build Your own Game Demo
+  - local: unit0/syllabus
+    title: Syllabus
+  - local: unit0/who-are-we
+    title: The Team
   - local: unit0/setup
-    title: Setup
+    title: Onboarding
   - local: unit0/discord101
     title: Discord 101
+  - local: unit0/how-to-get-most
+    title: Getting the most of the course
+  - local: unit0/conclusion
+    title: Conclusion
+- title: Unit 1. Create a smart Robot NPC using Hugging Face 🤗 and Unity Sentis
+  sections:
+    - local: unit1/introduction
+      title: Introduction
+    - local: unit1/sentence-similarity-explained
+      title: What is Sentence Similarity?
+    - local: unit1/local-vs-api
+      title: How to run an AI model local vs remote inference
+    - local: unit1/what-is-hf
+      title: What is Hugging Face 🤗?
+    - local: unit1/make-demo
+      title: Let's build our smart robot demo 🤖
+    - local: unit1/next-steps
+      title: What can you do now?
+    - local: unit1/conclusion
+      title: Conclusion
 - title: Defining my Demo Part 1. Finding the idea and writing the GDD
   sections:
   - local: demo1/introduction
@@ -18,3 +44,8 @@
     title: Step 2. Writing the GDD
   - local: demo1/conclusion
     title: Conclusion
+- title: When the next units will be published?
+  sections:
+    - local: communication/publishing-schedule
+      title: Publishing Schedule
+
