@@ -47,7 +47,7 @@
 - title: Bonus 1. Classical AI in Video Games
   sections:
   - local: unitbonus1/introduction
-    title: Introduction to this bonus section
+    title: Introduction
   - local: unitbonus1/ai-and-games
     title: AI 101 by AI and Games
   - local: unitbonus1/ai-gmtk
