@@ -58,6 +58,8 @@
     title: Classical AI in Unreal
   - local: unitbonus1/conclusion
     title: Conclusion
+  - local: unitbonus1/additional-readings
+    title: Additional Readings
 - title: When the next units will be published?
   sections:
     - local: communication/publishing-schedule
