@@ -32,6 +32,18 @@
       title: What can you do now?
     - local: unit1/conclusion
       title: Conclusion
+- title: Defining my Demo Part 1. Finding the idea and writing the GDD
+  sections:
+  - local: demo1/introduction
+    title: Introduction
+  - local: demo1/first-game
+    title: It's your first game?
+  - local: demo1/game-idea
+    title: Step 1. Crafting the Game Idea
+  - local: demo1/game-design-document
+    title: Step 2. Writing the GDD
+  - local: demo1/conclusion
+    title: Conclusion
 - title: Bonus 1. Classical AI in Video Games
   sections:
     - local: unitbonus1/introduction
@@ -46,7 +58,7 @@
       title: Classical AI in Unreal
     - local: unitbonus1/conclusion
       title: Conclusion
-- title: AI Tools for Game Developers 🎨
+- title: Unit 2. AI Tools for Game Developers 🎨
   sections:
     - local: unit2/introduction
       title: Introduction
