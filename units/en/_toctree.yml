@@ -56,6 +56,12 @@
       title: Music Generation 🎵
     - local: unit2/ai-voice-actors
       title: AI Voice Actors 🤖
+    - local: unit2/animation-generation
+      title: Animation Generation 💃
+    - local: unit2/texture-generation
+      title: Texture Generation 🖼️
+    - local: unit2/2d-generation
+      title: 2D Assets Generation 🎮
 - title: When the next units will be published?
   sections:
     - local: communication/publishing-schedule
