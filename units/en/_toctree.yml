@@ -62,6 +62,10 @@
       title: Texture Generation 🖼️
     - local: unit2/2d-generation
       title: 2D Assets Generation 🎮
+    - local: unit2/sound-generation
+      title: Sound Effects Generation 🔊
+    - local: unit2/conclusion
+      title: Conclusion
 - title: When the next units will be published?
   sections:
     - local: communication/publishing-schedule
