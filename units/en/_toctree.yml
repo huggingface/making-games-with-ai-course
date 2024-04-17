@@ -54,6 +54,8 @@
       title: Code Assistants 👩‍💻
     - local: unit2/music-generation
       title: Music Generation 🎵
+    - local: unit2/ai-voice-actors
+      title: AI Voice Actors 🤖
 - title: When the next units will be published?
   sections:
     - local: communication/publishing-schedule
