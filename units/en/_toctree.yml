@@ -84,6 +84,12 @@
   sections:
     - local: unit3/introduction
       title: Introduction
+    - local: unit3/demo
+      title: A deep dive on the Demo
+    - local: unit3/customize
+      title: Customize your own Demo
+    - local: unit3/conclusion
+      title: Conclusions
 - title: When the next units will be published?
   sections:
     - local: communication/publishing-schedule
