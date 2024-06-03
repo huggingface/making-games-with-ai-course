@@ -80,6 +80,10 @@
       title: Sound Effects Generation 🔊
     - local: unit2/conclusion
       title: Conclusion
+- title: Unit 3. Title to define
+  sections:
+    - local: unit3/introduction
+      title: Introduction
 - title: When the next units will be published?
   sections:
     - local: communication/publishing-schedule
