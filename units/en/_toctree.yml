@@ -80,7 +80,7 @@
       title: Sound Effects Generation 🔊
     - local: unit2/conclusion
       title: Conclusion
-- title: Unit 3. Crafting LLM-powered NPCs with Gigax and Cubzh
+- title: Unit 3. Crafting LLM-powered NPC with Gigax and Cubzh
   sections:
     - local: unit3/introduction
       title: Introduction
