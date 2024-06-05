@@ -80,6 +80,16 @@
       title: Sound Effects Generation 🔊
     - local: unit2/conclusion
       title: Conclusion
+- title: Unit 3. Crafting LLM-powered NPC with Gigax and Cubzh
+  sections:
+    - local: unit3/introduction
+      title: Introduction
+    - local: unit3/demo
+      title: A deep dive on the NPC-Playground
+    - local: unit3/customize
+      title: Make your own Demo
+    - local: unit3/conclusion
+      title: Conclusion
 - title: When the next units will be published?
   sections:
     - local: communication/publishing-schedule
