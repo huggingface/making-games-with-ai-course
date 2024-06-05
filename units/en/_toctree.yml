@@ -85,7 +85,7 @@
     - local: unit3/introduction
       title: Introduction
     - local: unit3/demo
-      title: A deep dive on the Demo
+      title: A deep dive on the NPC-Playground
     - local: unit3/customize
       title: Make your own Demo
     - local: unit3/conclusion
